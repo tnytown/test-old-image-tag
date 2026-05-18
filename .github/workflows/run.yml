@@ -1,0 +1,28 @@
+name: Hello world
+
+permissions: {}
+jobs:
+  minor-outdated:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:3.21
+    steps:
+      - run: cat /etc/os-release
+  patch-outdated:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:3.22.3
+    steps:
+      - run: cat /etc/os-release
+  major-outdated:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:2.7
+    steps:
+      - run: cat /etc/os-release
+  latest:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+    steps:
+      - run: cat /etc/os-release
